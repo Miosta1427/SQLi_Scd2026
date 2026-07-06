@@ -44,8 +44,7 @@ def login():
         conn = sqlite3.connect('database.db')
         c = conn.cursor()
         
-        # Bugged code
-        query = f"SELECT * FROM users WHERE username = '{user}' AND password = '{pwd}'"
+        query = f"SELECT * FROM users WHERE username = '{user}' AND password = '{pwd}'" #Code loi
         c.execute(query)
         
         ket_qua = c.fetchone()
@@ -68,8 +67,7 @@ def search():
         conn = sqlite3.connect('database.db')
         c = conn.cursor()
         
-        # Code lỗi: Cộng chuỗi trực tiếp
-        query = f"SELECT id, name FROM products WHERE name LIKE '%{tu_khoa}%' AND is_hidden = 0"
+        query = f"SELECT id, name FROM products WHERE name LIKE '%{tu_khoa}%' AND is_hidden = 0" #Code loi
         
         try:
             c.execute(query)
